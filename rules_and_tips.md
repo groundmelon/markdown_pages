@@ -61,13 +61,13 @@ http://wiki.ros.org/StyleGuide is recommended.
 
 ### Tips for Debugging ROS Applications (Oops! Segmentfault!)" ###
 
-#### use gdb ####
+#### Use gdb ####
 
-* Add **-g** in your CMakefiles: **set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -Wall**
-* Add **launch-prefix="gdb --args"** and make sure that **output="screen"** in your `<node`> tag attributes. **output="log"** will redirect output of gdb to a log file, and you will not see it.
+* Add `-g` in your CMakefiles: ```set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O3 -Wall```
+* Add `launch-prefix="gdb --args"` and make sure that `output="screen"` in your `<node>` tag attributes. `output="log"` will redirect output of gdb to a log file, and you will not see it.
 * Some useful gdb commands: r, c, b, bt, frame, q. Google "gdb" for detailed information.
 
-#### use backward-cpp ####
+#### Use backward-cpp ####
 * See https://github.com/bombela/backward-cpp for details.
 * Install bfd
 * Include backward.hpp in your code and set the #define flag
@@ -77,12 +77,12 @@ http://wiki.ros.org/StyleGuide is recommended.
 
 1. Google "ROS multiple machines" and read the tutorial and wiki to get general concepts.
 
-2. Edit the ```/etc/hosts``` on BOTH local and remote machines. Add hostnames and their ip addresses in the host file. After editing you can test it using ping. Make sure that they can ping each other by using HOSTNAME (NOT ip address).
+2. Edit the ```/etc/hosts``` on **BOTH** local and remote machines. Add hostnames and their ip addresses in the host file. After editing, you can test it with ping. Make sure that they can ping each other by using **HOSTNAME** (NOT ip address).
 
 3. For the machine which is expected to connect to a remote roscore, set the environment variable: ``` export ROS_MASTER_URI=http://the-remote-machine-hostname:11311```
 
-4. You can add ```the export command```/```a alias``` in the ```~/.bashrc``` for convenience.
+4. You can add **the export command** or **a alias** in the ```~/.bashrc``` for convenience.
 
-5. I've also wrote a plugin for [powerline-shell](https://github.com/milkbikis/powerline-shell). My plugin will show up the ```remote machine hostname for ros``` on the powerline-shell as a reminder. See [groundmelon/powerline-shell](https://github.com/groundmelon/powerline-shell) if you'd like to use and improve it.
+5. I've also wrote a plugin for [powerline-shell](https://github.com/milkbikis/powerline-shell). My plugin will show up the **hostname in ROS_MASTER_URI** on the powerline-shell as a reminder. See [groundmelon/powerline-shell](https://github.com/groundmelon/powerline-shell) if you'd like to use and improve it.
 
 
