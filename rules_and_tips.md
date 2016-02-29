@@ -46,17 +46,17 @@ http://wiki.ros.org/StyleGuide is recommended.
 * ROS is a very powerful tool with excellent documents and an active community. Read the wiki pages. Google your problems.
 * Use a version control tool to manage the code, except that you can remember the difference between today's code and yesterday's code, and code in NUC and code in your USB disk. Some free online services: [Github](https://github.com/) [Bitbucket](https://bitbucket.org/)
 * terminator / alt+[12345] in gnome-terminal
-* bash: alias cmk="cd ~/catkin_ws; catkin_make; cd -" to avoid changing directory before make.
+* bash: alias cmk="cd ~/catkin_ws; catkin_make; cd -" to avoid changing directory before catkin_make.
 
 
 ### Interface Tips ###
 
-* Never hard code a path in the code, such as **load_calib_param("/home/foo/25000681.yaml")** Instead, please use a rosparam to load the file path.
+* Never hard code a path in the code, such as ```load_calib_param("/home/foo/25000681.yaml")```. Instead, please use a rosparam to load the file path.
 * Use private topics in the code and remap them to global ones in the launch file. Google "ros namespace" if your are not familiar with it.
 
 ### Visualization and Printing Tips ###
 
-* Be careful when using **cv::imshow()** because it will raise an exception when there is no display (e.g. NUC without a screen). Provide a convenient switch (rosparam, preprocessor directive) to turn it on or off.
+* Be careful when using ```cv::imshow(...)``` because it will raise an exception when there is no display (e.g. NUC without a screen). Provide a convenient switch (rosparam, preprocessor directive) to turn it on or off.
 * Many useful tools in rosconsole. See [rosconsole wiki page](http://wiki.ros.org/rosconsole)
 
 ### Tips for Debugging ROS Applications (Oops! Segmentfault!)" ###
