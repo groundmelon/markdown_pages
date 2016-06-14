@@ -76,7 +76,7 @@ http://wiki.ros.org/StyleGuide is recommended.
 
 Before continuing, please google "ROS multiple machines" and read the tutorial/wiki to *get general concepts*. But the toturial is confusing, so come back when you do it step by step.
 
-#### Edit `/etc/hosts/` with static ip address ####
+#### Method 1: Edit `/etc/hosts` with static ip address ####
 
 1. Edit the ```/etc/hosts``` on **BOTH** local and remote machines. Add hostnames and their ip addresses in the host files. After editing, you can test it with ping. Make sure that they can ping each other by using **HOSTNAME** (NOT ip address).
 
@@ -84,7 +84,7 @@ Before continuing, please google "ROS multiple machines" and read the tutorial/w
 
 3. You can add **the export command** or **an alias** in the ```~/.bashrc``` for convenience.
 
-#### Using [mDNS](https://help.ubuntu.com/community/HowToZeroconf) feature of Ubuntu for dynamic ip ####
+#### Method 2: Using [mDNS](https://help.ubuntu.com/community/HowToZeroconf) feature of Ubuntu for dynamic ip ####
 
 0. Since ubuntu is equipped with [mDNS](https://help.ubuntu.com/community/HowToZeroconf), if your local and remote machine are in the same subnet, they should be able to resolve each other with HOSTNAME.local. For example, your onboard device has hostname `uav` with ip address `192.168.1.123`, and your laptop has hostname `laptop` with ip address `192.167.1.124` in the same local network. Try to ```ping uav.local``` on your laptop and ```ping laptop.local``` on your onboard device. They should work well.
 
